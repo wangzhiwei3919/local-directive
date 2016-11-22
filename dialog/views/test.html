@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../dist/lib/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dist/css/dialog.css" />
+    <script type="text/javascript" src="../dist/app.js"></script>
+    <title></title>
+    <script>
+        /**************************************************************************
+         *
+         * <dialog load-data="对象"></dialog>
+         *
+         * $scope.data{
+            isShow: true,//必须 控制显示和隐藏
+            template: {//必须 内容模板
+                url: webroot+'/views/dialog/user-add-dialog.html',//模板地址
+                events: function (events) {//对模板进行事件绑定,所有事件和值必须绑定在传入的对象上
+                    events.title = title;
+                    events.item=item;
+                }
+            },
+            buttons: {//必须 buttons:{}空对象表示没有按钮,按钮可0-n个
+                key: 'name',//非必须,用于控制按钮显示哪个值
+                list: [//非必须,用于自定义按钮,list存在,key必须存在
+                    {//元素内容自定义,用key控制显示
+                        name: buttonName,
+                        value: 'true'
+                    },
+                    {
+                        name: '取消',
+                        value: 'false'
+                    }
+                ],
+                callback: function (item, index) {//必须,按钮点击的回调事件,item:当前选中的元素,index:元素下标
+                    $scope.data.isShow = false;
+                    if (item.value) {
+                        //window.location.href='login.html';
+                    }
+                }
+            }
+           }
+         *  <dialogload-data="data"></dialog>
+         *
+         **************************************************************************/
+        app.controller('dialog', ['$scope','webroot', function ($scope,webroot) {
+            $scope.content="请输入进行测试";
+            $scope.buttonName='确认';
+
+            $scope.data = {
+                isShow: false,
+                template: {
+                    url: webroot + '/views/dialog/warn-dialog.html',
+                    events: function (events) {
+                        //因为在当前$scope中定义,所以能够直接访问当前$scope空间
+                        events.content = $scope.content;
+                        events.back=function(){//因为传递的是值,需要自己进行触发.
+                            $scope.backData ='这是一个回传(还可以查看控制台):'+events.content;
+                        };
+
+                    }
+                },
+                buttons: {
+                    key: 'name',
+                    list: [
+                        {
+                            name: $scope.buttonName,
+                            value: 'true'
+                        },
+                        {
+                            name: '取消',
+                            value: 'false'
+                        }
+                    ],
+                    callback: function (item, index) {
+                        $scope.data.isShow = false;
+                        console.log('这是一个按钮回调事件'+index);
+                        console.log(item);
+                    }
+                }
+            };
+        }]);
+    </script>
+</head>
+<body ng-controller="dialog">
+<dialog load-data="data"></dialog>
+<button ng-click="data.isShow=!data.isShow">点击按钮测试</button>
+{{backData}}
+<script type="text/javascript" src="../dist/directive/dialogBox.js"></script>
+
+</body>
+</html>

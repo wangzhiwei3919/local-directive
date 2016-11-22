@@ -1,0 +1,87 @@
+.dialog-main{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  .close-button{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 5px;
+    top: 2px;
+    font-style: normal;
+    font-size: 14px;
+    color: #AFAFAF;
+    opacity: .5;
+    cursor: pointer;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  .dialog-box{
+    min-width: 237px;
+    position: absolute;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+  }
+  p.tips{
+    text-align: center;
+    font-size: 18px;
+    color: #3594C3;
+    margin: 23px 0 34px;
+  }
+  table.dialog-table{
+    width: 70%;
+    margin: 0 auto;
+    tr{
+      display: block;
+      margin-bottom: 20px;
+    }
+    td{
+      width: 160px;
+      text-align: left;
+      position: relative;
+      input,.dropdown-main,select{
+        //box-sizing: border-box;
+        width: inherit;
+        height: 30px;
+      }
+      textarea{
+        width: inherit;
+      }
+      &:first-child{
+        width: 76px;
+      }
+    }
+  }
+  .dialog-button-box{
+    text-align: center;
+    button{
+      width: 80px;
+      height: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 25px;
+      border: 1px solid #D8D8D8;
+      color: #333;
+      margin: 0 5px 20px;
+      border-radius: 0;
+      &.button0{
+        border-width: 0;
+        background:#01C5DA;
+        color: white;
+      }
+    }
+  }
+}
