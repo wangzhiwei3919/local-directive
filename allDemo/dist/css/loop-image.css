@@ -1,0 +1,106 @@
+body {
+  text-align: center;
+}
+.loop-image {
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+.loop-image i {
+  display: inline-block;
+}
+.loop-image .image-list {
+  padding: 0;
+  height: auto;
+}
+.loop-image .icon-left,
+.loop-image .icon-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  color: white;
+  font-size: 40px;
+  height: 60px;
+  width: 40px;
+  line-height: 60px;
+  cursor: pointer;
+  font-weight: 100;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: .4;
+  text-align: center;
+}
+.loop-image .icon-left:hover,
+.loop-image .icon-right:hover {
+  opacity: 1;
+}
+.loop-image .icon-left {
+  left: 0;
+}
+.loop-image .icon-left:before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 21px;
+  background: white;
+  -webkit-transform: rotate(-25deg);
+  -ms-transform: rotate(-25deg);
+  transform: rotate(-25deg);
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  bottom: 10px;
+}
+.loop-image .icon-left:after {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 21px;
+  background: white;
+  position: absolute;
+  -webkit-transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  transform: rotate(25deg);
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 10px;
+}
+.loop-image .icon-right {
+  right: 0;
+}
+.loop-image .icon-right:after {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 21px;
+  background: white;
+  -webkit-transform: rotate(-25deg);
+  -ms-transform: rotate(-25deg);
+  transform: rotate(-25deg);
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  top: 10px;
+}
+.loop-image .icon-right:before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 21px;
+  background: white;
+  position: absolute;
+  -webkit-transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  transform: rotate(25deg);
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 10px;
+}
+.loop-image img {
+  width: 600px;
+  height: 600px;
+}

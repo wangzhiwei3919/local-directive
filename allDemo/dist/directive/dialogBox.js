@@ -1,8 +1,7 @@
 /**
  * Created by wangzhiwei on 16/11/16.
  * 两个必须参数
- * loadData  所有的数据
- * dialogShow 控制显示隐藏
+ * loadData  所有的参数
  */
 app.directive('dialog', function () {
     return {

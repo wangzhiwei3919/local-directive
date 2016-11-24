@@ -20,7 +20,7 @@
                     events.item=item;
                 }
             },
-            buttons: {//必须 buttons:{}空对象表示没有按钮,按钮可0-n个
+            buttons: {//必须 buttons:{}对象不存在表示没有按钮,按钮可0-n个
                 key: 'name',//非必须,用于控制按钮显示哪个值
                 list: [//非必须,用于自定义按钮,list存在,key必须存在
                     {//元素内容自定义,用key控制显示
@@ -43,14 +43,14 @@
          *  <dialogload-data="data"></dialog>
          *
          **************************************************************************/
-        app.controller('dialog', ['$scope','webroot', function ($scope,webroot) {
+        app.controller('dialog', ['$scope','webRoot', function ($scope,webRoot) {
             $scope.content="请输入进行测试";
             $scope.buttonName='确认';
 
             $scope.data = {
                 isShow: false,
                 template: {
-                    url: webroot + '/views/dialog/warn-dialog.html',
+                    url: webRoot + '/views/dialog/warn-dialog.html',
                     events: function (events) {
                         //因为在当前$scope中定义,所以能够直接访问当前$scope空间
                         events.content = $scope.content;

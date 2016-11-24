@@ -1,0 +1,80 @@
+body{
+  text-align: center;
+}
+.loop-image{
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+  i{
+    display: inline-block;
+  }
+  .image-list{
+    padding: 0;
+    height: auto;
+  }
+  .icon-left,.icon-right{
+    position: absolute;
+    top:0;
+    bottom:0;
+    margin: auto;
+    color: white;
+    font-size: 40px;
+    height: 60px;
+    width: 40px;
+    line-height: 60px;
+    cursor: pointer;
+    font-weight: 100;
+    background: rgba(0,0,0,0.3);
+    opacity: .4;
+    text-align: center;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  .icon-left{
+    left: 0;
+    &:before{
+      .line(-25deg);
+      position: absolute;
+      bottom: 10px;
+    }
+    &:after{
+      .line(25deg);
+      top: 10px;
+    }
+  }
+
+  .icon-right{
+    right:0;
+    &:after{
+      .line(-25deg);
+      position: absolute;
+      top: 10px;
+    }
+    &:before{
+      .line(25deg);
+      bottom: 10px;
+    }
+  }
+  img{
+    width: 600px;
+    height: 600px;
+  }
+}
+.line(@deg){
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 21px;
+  background: white;
+  position: absolute;
+  .deg(@deg);
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.deg(@deg){
+  -webkit-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  transform: rotate(@deg);
+}

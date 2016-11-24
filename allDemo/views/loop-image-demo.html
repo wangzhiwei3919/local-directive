@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../dist/lib/angular.min.js"></script>
+    <script type="text/javascript" src="../dist/app.js"></script>
+    <script type="text/javascript" src="../dist/directive/loopImage.js"></script>
+    <link rel="stylesheet" href="../dist/css/loop-image.css"/>
+    <script>
+        app.controller('loopImage',['$scope',function($scope){
+            $scope.data={
+                "key":"url",//用于确定哪个属性是链接地址
+                loop:false,//用于确实是否轮播 true:轮播 false:不轮播
+                imageList:[
+                    {
+                        "url":'../dist/images/1.png'
+                    },
+                    {
+                        "url":'../dist/images/2.png'
+                    },
+                    {
+                        "url":'../dist/images/3.png'
+                    },
+                    {
+                        "url":'../dist/images/4.png'
+                    },
+                    {
+                        "url":'../dist/images/5.png'
+                    },
+                    {
+                        "url":'../dist/images/6.png'
+                    }
+                ]
+            };
+            $scope.current=null;//用于确定默认选中,或者接收返回
+        }]);
+    </script>
+</head>
+<body ng-controller="loopImage">
+<loopimage load-data="data" current-image="current"></loopimage>
+</body>
+</html>
