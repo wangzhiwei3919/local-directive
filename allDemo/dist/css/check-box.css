@@ -1,0 +1,84 @@
+ul {
+  list-style: none;
+}
+ul li {
+  position: relative;
+}
+i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  position: relative;
+}
+i.icon-check {
+  background: red;
+}
+i.icon-uncheck {
+  border: 1px solid black;
+}
+i.icon-open:after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 5px;
+  background: black;
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  left: 2px;
+}
+i.icon-open:before {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 5px;
+  background: black;
+  position: absolute;
+  -webkit-transform: rotate(50deg);
+  -ms-transform: rotate(50deg);
+  transform: rotate(50deg);
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 2px;
+}
+i.icon-close:after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 5px;
+  background: black;
+  -webkit-transform: rotate(-25deg);
+  -ms-transform: rotate(-25deg);
+  transform: rotate(-25deg);
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  bottom: 4px;
+}
+i.icon-close:before {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 5px;
+  background: black;
+  position: absolute;
+  -webkit-transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  transform: rotate(25deg);
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 4px;
+}
+i.switch-icon {
+  border: 1px solid saddlebrown;
+  position: absolute;
+  left: -15px;
+  top: 2px;
+}

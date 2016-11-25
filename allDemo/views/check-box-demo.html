@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../dist/lib/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dist/css/dialog.css"/>
+    <script type="text/javascript" src="../dist/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dist/css/check-box.css" />
+    <script type="text/javascript" src="../dist/directive/checkBox.js"></script>
+    <title></title>
+    <script>
+        app.controller('checkBox', ['$scope', function ($scope) {
+            $scope.icons = {
+                "open": "icon-open",
+                "close": "icon-close",
+                "check": "icon-check",
+                "uncheck": 'icon-uncheck'
+            };
+            $scope.data = {
+                "checkedBox": false,//true:多选,false 单选 不存在此值默认单选
+                "list": [
+                    {
+                        "id": 1,
+                        "content": "1级选项1",
+                        "checked": false
+                    },
+                    {
+                        "id": 2,
+                        "content": "1级选项2",
+                        "checked": false
+                    },
+                    {
+                        "id": 3,
+                        "content": "1级选项3",
+                        "checked": false
+                    },
+                    {
+                        "id": 4,
+                        "content": "1级选项4",
+                        "checked": false,
+                        "child": {
+                            "checkedBox": true,
+                            "list": [
+                                {
+                                    "id": 1,
+                                    "content": "1级选项4-1",
+                                    "checked": false
+                                },
+                                {
+                                    "id": 2,
+                                    "content": "1级选项4-2",
+                                    "checked": false
+                                },
+                                {
+                                    "id": 3,
+                                    "content": "1级选项4-3",
+                                    "checked": false
+                                },
+                                {
+                                    "id": 4,
+                                    "content": "1级选项4-4",
+                                    "checked": false,
+                                    "child": {
+                                        "checkedBox": true,
+                                        "list": [
+                                            {
+                                                "id": 1,
+                                                "content": "1级选项4-4-1",
+                                                "checked": false
+                                            },
+                                            {
+                                                "id": 2,
+                                                "content": "1级选项4-4-2",
+                                                "checked": false
+                                            },
+                                            {
+                                                "id": 3,
+                                                "content": "1级选项4-4-3",
+                                                "checked": false
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }]);
+    </script>
+</head>
+<body ng-controller="checkBox">
+<checkbox load-data="data" icons="icons"></checkbox>
+<hr/>
+{{data}}
+</body>
+</html>
